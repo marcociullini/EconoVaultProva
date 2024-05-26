@@ -9,4 +9,6 @@ add_executable(EconoVault main.cpp
         Credit.h
         Debit.cpp
         Debit.h
+        PlannedTransaction.cpp
+        PlannedTransaction.h
 )

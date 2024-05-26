@@ -10,7 +10,7 @@
 #include "Transaction.h"
 
 template <typename T>
-class Credit : public Transaction {
+class Credit : public virtual Transaction {
 public:
     explicit Credit(float amount) : amount(amount){
         time_t rawTime;
@@ -18,6 +18,8 @@ public:
         struct tm* rawTimeA;
         rawTimeA = localtime(&rawTime);
         dateTime = asctime(rawTimeA);
+
+
     }
 
     float getAmount() const {

@@ -10,7 +10,7 @@
 #include "Transaction.h"
 
 template<typename T>
-class Debit : public Transaction {
+class Debit : public virtual Transaction {
 public:
     explicit Debit(float amount) : amount(amount){
         time_t rawTime;
@@ -40,7 +40,7 @@ public:
         this->dateTime = asctime(rawTimeA);
     }
 
-    void printTransaction(Transaction&) const {
+    void printTransaction() const {
         std::cout << "Transaction: " << transactionType << " in" << ", amount: " << amount << ", time info: " << dateTime << std::endl;
     }
 
