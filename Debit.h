@@ -19,6 +19,13 @@ public:
         rawTimeA = localtime(&rawTime);
         dateTime = asctime(rawTimeA);
     }
+    Debit operator =(const Debit &right) override{
+        if(this != &right) {
+            amount = right.amount;
+            dateTime = right.dateTime;
+            transactionType = right.transactionType;
+        }
+    }
 
     float getAmount() const {
         return amount;
@@ -40,7 +47,7 @@ public:
         this->dateTime = asctime(rawTimeA);
     }
 
-    void printTransaction() const {
+    virtual void printTransaction() const {
         std::cout << "Transaction: " << transactionType << " in" << ", amount: " << amount << ", time info: " << dateTime << std::endl;
     }
 

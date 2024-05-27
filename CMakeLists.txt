@@ -11,4 +11,6 @@ add_executable(EconoVault main.cpp
         Debit.h
         PlannedTransaction.cpp
         PlannedTransaction.h
+        Date.cpp
+        Date.h
 )

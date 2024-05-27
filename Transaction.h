@@ -8,9 +8,8 @@
 
 class Transaction {
 public:
-    virtual void printTransaction() = 0;
-
-
+    virtual void printTransaction() const = 0;
+    virtual Transaction operator =(const Transaction &right) = 0;
 };
 
 
